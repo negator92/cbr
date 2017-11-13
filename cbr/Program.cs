@@ -13,7 +13,7 @@ namespace cbr
             using (WebClient webClient = new WebClient())
             {
                 string dateName = DateTime.Now.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
-                string xmlString = webClient.DownloadString($"http://www.cbr.ru/scripts/XML_daily_eng.asp?date_req={dateName}");
+                string xmlString = webClient.DownloadString($"https://www.cbr.ru/scripts/XML_daily_eng.asp?date_req={dateName}");
                 xmlString = xmlString.Substring(xmlString.IndexOf(Environment.NewLine));
                 XDocument xDocument = XDocument.Parse(xmlString);
                 XElement xElement = xDocument.XPathSelectElement("//*[@ID=\"R01235\"]");
