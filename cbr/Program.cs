@@ -12,7 +12,7 @@ namespace cbr
     {
         private static void Main(string[] args)
         {
-            if (args == null || args.Length > 1)
+            if (args == null || args.Length != 1)
                 args = new string[] { "R01235" };
             GetCurrency(args[0]).Wait();
         }
